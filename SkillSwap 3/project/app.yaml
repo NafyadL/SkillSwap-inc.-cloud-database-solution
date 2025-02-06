@@ -1,0 +1,22 @@
+runtime: php74 
+
+handlers:
+  - url: /(.+\.php)$
+    script: auto
+  - url: /(.+\.(gif|png|jpg|css|js))$
+    static_files: \1
+    upload: .+\.(gif|png|jpg|css|js)$
+  - url: /(.+)/
+    script: auto
+  - url: /
+    script: auto
+
+env_variables:
+  CLOUD_SQL_CONNECTION_NAME: "skillswap:us-east4:skillswap"
+
+  DB_USER: "skillswap"
+  DB_PASSWORD: "HUnl0921@"
+  DB_NAME: "skillswapdb"
+
+beta_settings:
+  cloud_sql_instances: "skillswap:us-east4:skillswap"
